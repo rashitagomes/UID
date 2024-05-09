@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Celebration Animation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Ensures no scrollbars during animation */
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f5f5f5; /* Background color */
+        }
+
+        .celebration {
+            position: relative;
+            height: 100vh; /* Full height */
+            width: 100vw; /* Full width */
+        }
+
+        /* Keyframes for confetti animation */
+        @keyframes fall {
+            0% {
+                top: -10%;
+                opacity: 1;
+            }
+            100% {
+                top: 100%;
+                opacity: 0;
+            }
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Confetti elements with varying styles */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #e57373; /* Red */
+            opacity: 0.8; /* Slight transparency */
+            animation: fall 3s infinite, spin 2s linear infinite;
+        }
+
+        .confetti:nth-child(odd) {
+            background-color: #81c784; /* Green */
+            animation: fall 4s infinite, spin 3s linear infinite;
+        }
+
+        /* Randomly position confetti elements and set staggered delays */
+        .confetti:nth-child(1) {
+            left: 10%;
+            animation-delay: 0.2s;
+        }
+
+        .confetti:nth-child(2) {
+            left: 30%;
+            animation-delay: 0.5s;
+        }
+
+        .confetti:nth-child(3) {
+            left: 50%;
+            animation-delay: 0.7s;
+        }
+
+        .confetti:nth-child(4) {
+            left: 70%;
+            animation-delay: 0.4s;
+        }
+
+        .confetti:nth-child(5) {
+            left: 90%;
+            animation-delay: 0.3s;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Container for celebration/confetti elements -->
+    <div class="celebration">
+        <!-- Confetti elements -->
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+        <div class="confetti"></div>
+    </div>
+</body>
+</html>
